@@ -8,6 +8,23 @@
     <!-- FavIcon -->
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
 
+    <!-- Preload LCP hero images -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/archipelagoagency-mainTop.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/archipelagoagency-mainTop-Mobile.webp"
+      type="image/webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
+    />
+
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +35,20 @@
 
     <!-- Font Awesome -->
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      />
+    </noscript>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/CSS/style.css" />
@@ -33,7 +61,12 @@
       <nav class="navbar">
         <!-- Logo -->
         <a href="index.html" class="navbar-logo">
-          <img src="assets/images/logo.png" alt="Archipelago Agency" />
+          <img
+            width="549"
+            height="121"
+            src="assets/images/logo.webp"
+            alt="Archipelago Agency"
+          />
         </a>
 
         <!-- Main Nav -->
@@ -83,6 +116,8 @@
           <!-- Icon Title -->
           <div class="sidebar-title-icon">
             <img
+              width="40"
+              height="40"
               src="assets/images/Logo-Title-Sidebar.svg"
               alt="icon-title-sidebar"
             />
@@ -98,6 +133,8 @@
           aria-label="Close sidebar"
         >
           <img
+            width="40"
+            height="40"
             src="assets/images/button_close.svg"
             alt="Button-Close-Sidebar"
           />
@@ -183,6 +220,8 @@
         <div class="sidebar-contact-info-header">
           <div class="info-title-icon">
             <img
+              width="32"
+              height="32"
               src="assets/images/information-sidebar.svg"
               alt="information-sidebar"
             />
@@ -284,8 +323,12 @@
       <div class="about-us-container">
         <div class="about-us-image">
           <img
-            src="assets/images/archipelagoagency-about-us.png"
+            width="759"
+            height="652"
+            src="assets/images/archipelagoagency-about-us.webp"
             alt="About Us - Archipelago Agency"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
@@ -472,7 +515,12 @@
           </h2>
 
           <button class="play-video-btn" id="openVideo">
-            <img src="assets/images/play-button.svg" alt="" />
+            <img
+              width="97"
+              height="90"
+              src="assets/images/play-button.webp"
+              alt=""
+            />
 
             <span class="play-text"> Play Video </span>
           </button>
@@ -489,7 +537,7 @@
         </button>
 
         <div class="video-wrapper">
-          <video id="popupVideo" controls>
+          <video id="popupVideo" controls preload="none">
             <source src="assets/video/video.mp4" type="video/mp4" />
             Browser kamu tidak mendukung video.
           </video>
@@ -529,7 +577,14 @@
               <!-- Project 1 -->
               <article class="project-card">
                 <div class="project-image">
-                  <img src="assets/images/Project-1.png" alt="Project 1" />
+                  <img
+                    width="550"
+                    height="620"
+                    src="assets/images/Project-1.webp"
+                    alt="Project 1"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="project-info">
                   <h3>Intoria Design, corporate and retail architecture</h3>
@@ -545,7 +600,14 @@
               <!-- Project 2 -->
               <article class="project-card">
                 <div class="project-image">
-                  <img src="assets/images/Project-2.png" alt="Project 2" />
+                  <img
+                    width="550"
+                    height="620"
+                    src="assets/images/Project-2.webp"
+                    alt="Project 2"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="project-info">
                   <h3>Distinctive designs for distinctive interiors.</h3>
@@ -562,7 +624,14 @@
               <!-- Project 3 -->
               <article class="project-card">
                 <div class="project-image">
-                  <img src="assets/images/Project-3.png" alt="Project 3" />
+                  <img
+                    width="550"
+                    height="620"
+                    src="assets/images/Project-3.webp"
+                    alt="Project 3"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="project-info">
                   <h3>A small efficient interior design team.</h3>
@@ -578,7 +647,14 @@
               <!-- Project 4 -->
               <article class="project-card">
                 <div class="project-image">
-                  <img src="assets/images/Project-4.png" alt="Project 4" />
+                  <img
+                    width="550"
+                    height="620"
+                    src="assets/images/Project-4.webp"
+                    alt="Project 4"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="project-info">
                   <h3>Interiors inspired by innovation.</h3>
@@ -594,7 +670,14 @@
               <!-- Project 5 -->
               <article class="project-card">
                 <div class="project-image">
-                  <img src="assets/images/Project-5.png" alt="Project 5" />
+                  <img
+                    width="550"
+                    height="620"
+                    src="assets/images/Project-5.webp"
+                    alt="Project 5"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div class="project-info">
                   <h3>We design thoughtful, livable spaces.</h3>
@@ -641,45 +724,98 @@
         <div class="clients-grid">
           <!-- Client 1 -->
           <div class="client-logo">
-            <img src="assets/images/indosat.png" alt="Indosat Ooredoo" />
+            <img
+              width="400"
+              height="200"
+              src="assets/images/indosat.webp"
+              alt="Indosat Ooredoo"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <!-- Client 2 -->
           <div class="client-logo">
-            <img src="assets/images/bri.png" alt="Bank BRI" />
+            <img
+              width="439"
+              height="150"
+              src="assets/images/bri.webp"
+              alt="Bank BRI"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <!-- Client 3 -->
           <div class="client-logo">
-            <img src="assets/images/bjb.png" alt="Bank BJB" />
+            <img
+              width="322"
+              height="150"
+              src="assets/images/bjb.webp"
+              alt="Bank BJB"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <!-- Client 4 -->
           <div class="client-logo">
-            <img src="assets/images/bina-marga.png" alt="Bina Marga" />
+            <img
+              width="498"
+              height="100"
+              src="assets/images/bina-marga.webp"
+              alt="Bina Marga"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <!-- Client 5 -->
           <div class="client-logo">
             <img
-              src="assets/images/ketenagakerjaan.png"
+              width="395"
+              height="150"
+              src="assets/images/ketenagakerjaan.webp"
               alt="Kementerian Ketenagakerjaan"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
           <!-- Client 6 -->
           <div class="client-logo">
-            <img src="assets/images/daihatsu.png" alt="Daihatsu" />
+            <img
+              width="487"
+              height="150"
+              src="assets/images/daihatsu.webp"
+              alt="Daihatsu"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <!-- Client 7 -->
           <div class="client-logo">
-            <img src="assets/images/yamaha.png" alt="Yamaha" />
+            <img
+              width="384"
+              height="150"
+              src="assets/images/yamaha.webp"
+              alt="Yamaha"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <!-- Client 8 -->
           <div class="client-logo">
-            <img src="assets/images/mitsubishi.png" alt="Mitsubishi Motors" />
+            <img
+              width="300"
+              height="150"
+              src="assets/images/mitsubishi.webp"
+              alt="Mitsubishi Motors"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
@@ -804,7 +940,9 @@
       <div class="footer-container">
         <div class="footer-brand">
           <img
-            src="assets/images/logo.png"
+            width="549"
+            height="121"
+            src="assets/images/logo.webp"
             alt="Archipelago Agency"
             class="footer-logo"
           />
