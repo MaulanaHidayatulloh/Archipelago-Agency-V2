@@ -96,18 +96,23 @@ originalCards.forEach((card) => {
 let cards = [...track.querySelectorAll(".project-card")];
 let currentIndex = total * 2;
 let isMoving = false;
-function getCardSize() {
+const trackWrapper = document.querySelector(".projects-track-wrapper");
+let sliderMetrics = { wrapperWidth: 0, cardWidth: 0, step: 0 };
+
+function measureSlider() {
   const card = cards[0];
   const cardWidth = card.offsetWidth;
   const trackStyle = window.getComputedStyle(track);
   const gap = parseFloat(trackStyle.columnGap) || 0;
-  return { cardWidth, gap, step: cardWidth + gap };
+  sliderMetrics = {
+    wrapperWidth: trackWrapper.offsetWidth,
+    cardWidth,
+    step: cardWidth + gap,
+  };
 }
 
 function getTranslate(index) {
-  const wrapper = document.querySelector(".projects-track-wrapper");
-  const wrapperWidth = wrapper.offsetWidth;
-  const { cardWidth, step } = getCardSize();
+  const { wrapperWidth, cardWidth, step } = sliderMetrics;
   const centerPosition = (wrapperWidth - cardWidth) / 2;
   return centerPosition - index * step;
 }
@@ -125,6 +130,7 @@ function moveSlider() {
 }
 
 track.style.transition = "none";
+measureSlider();
 moveSlider();
 requestAnimationFrame(() => {
   requestAnimationFrame(() => {
@@ -175,6 +181,7 @@ track.addEventListener("transitionend", (event) => {
 
 window.addEventListener("resize", () => {
   track.style.transition = "none";
+  measureSlider();
   moveSlider();
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
