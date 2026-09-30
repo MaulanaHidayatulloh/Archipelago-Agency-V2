@@ -126,8 +126,11 @@ function moveSlider() {
 
 track.style.transition = "none";
 moveSlider();
-track.offsetHeight;
-track.style.transition = "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    track.style.transition = "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+  });
+});
 nextButton.addEventListener("click", () => {
   if (isMoving) return;
   isMoving = true;
@@ -150,14 +153,22 @@ track.addEventListener("transitionend", (event) => {
     track.style.transition = "none";
     currentIndex -= total;
     moveSlider();
-    track.offsetHeight;
-    track.style.transition = "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        track.style.transition =
+          "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+      });
+    });
   } else if (currentIndex < total) {
     track.style.transition = "none";
     currentIndex += total;
     moveSlider();
-    track.offsetHeight;
-    track.style.transition = "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        track.style.transition =
+          "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+      });
+    });
   }
   isMoving = false;
 });
@@ -165,8 +176,11 @@ track.addEventListener("transitionend", (event) => {
 window.addEventListener("resize", () => {
   track.style.transition = "none";
   moveSlider();
-  track.offsetHeight;
-  track.style.transition = "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      track.style.transition = "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
+    });
+  });
 });
 
 /* =================================
